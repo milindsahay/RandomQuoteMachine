@@ -1,14 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import { render } from "react-dom";
-import Container from './container';
+import Container from "./container";
+import ThemeContext from "./ThemeContext";
 
-const App = ()=>{
-    return (
-        <div>
-        <h1>In the React</h1>
+const App = () => {
+  const theme = useState("darkblue");
+  return (
+    <ThemeContext.Provider value={theme}>
+      <div>
         <Container />
-        </div>
-    );
-}
+      </div>
+    </ThemeContext.Provider>
+  );
+};
 
-render(<App />, document.getElementById('root'));
+render(<App />, document.getElementById("root"));
