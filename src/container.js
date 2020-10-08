@@ -1,6 +1,8 @@
 /** @jsx jsx */
+//box shadow and animate
 import React, { useEffect, useState, useContext } from "react";
 import { jsx, css, Global } from "@emotion/core";
+import { CSSTransition } from "react-transition-group";
 import ThemeContext from "./ThemeContext";
 const Container = () => {
   const [quote, setQuote] = useState("Loading....");
@@ -25,11 +27,11 @@ const Container = () => {
   const newQuote = () => {
     setQuote("Loading...");
     setAuthor("");
-    fetch("https://thesimpsonsquoteapi.glitch.me/quotes")
+    fetch("https://api.quotable.io/random")
       .then((response) => response.json())
       .then((data) => {
-        setQuote(data[0].quote);
-        setAuthor("-" + data[0].character);
+        setQuote(data.content);
+        setAuthor("-" + data.author);
       })
       .catch((err) => {
         console.log(err);
@@ -54,6 +56,7 @@ const Container = () => {
           padding: 2em;
           background-color: white;
           max-width: 600px;
+          box-shadow: 5px 10px 35px 0px rgba(0, 0, 0, 0.15);
         `}
       >
         <Global
@@ -99,7 +102,35 @@ const Container = () => {
             margin-top: 5%;
           `}
         >
-          <div className="col-12">
+          <div className="col-6">
+            <a
+              href="https://twitter.com"
+              target="_blank"
+              className="btn"
+              css={css`
+                background-color: ${theme};
+                color: white;
+                width: 20%;
+                margin-right: 0.75em;
+              `}
+            >
+              <i className="fa fa-twitter"></i>
+            </a>
+
+            <a
+              href="https://tumblr.com"
+              target="_blank"
+              className="btn"
+              css={css`
+                background-color: ${theme};
+                color: white;
+                width: 20%;
+              `}
+            >
+              <i className="fa fa-tumblr"></i>
+            </a>
+          </div>
+          <div className="col-6">
             <span
               className="btn pull-right"
               onClick={newQuote}
