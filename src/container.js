@@ -57,6 +57,7 @@ const Container = () => {
           background-color: white;
           max-width: 600px;
           box-shadow: 5px 10px 35px 0px rgba(0, 0, 0, 0.15);
+          transition: all 0.5s;
         `}
       >
         <Global
@@ -67,6 +68,7 @@ const Container = () => {
               padding: 0;
               min-height: "100vh";
               max-width: "100vw";
+              transition: all 0.5s;
             }
           `}
         />
