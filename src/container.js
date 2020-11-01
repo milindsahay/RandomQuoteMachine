@@ -28,11 +28,11 @@ const Container = () => {
       .then((data) => {
         setQuote(data.content);
         setAuthor("-" + data.author);
+        setColor();
       })
       .catch((err) => {
         console.log(err);
       });
-    setColor();
   };
   useEffect(() => {
     newQuote();
