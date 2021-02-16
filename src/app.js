@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { render } from "react-dom";
 import Container from "./container";
 import ThemeContext from "./ThemeContext";
-
+// Redux Integration
 const App = () => {
   const theme = useState("darkblue");
   return (
