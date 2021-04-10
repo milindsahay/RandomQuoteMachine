@@ -54,7 +54,7 @@ const Container = () => {
           background-color: white;
           max-width: 600px;
           box-shadow: 5px 10px 35px 0px rgba(0, 0, 0, 0.15);
-          transition: all 1.5s;
+          transition: background-color 1.5s;
         `}
       >
         <Global
@@ -65,7 +65,7 @@ const Container = () => {
               padding: 0;
               min-height: "100vh";
               max-width: "100vw";
-              transition: all 1.5s;
+              transition: background-color 1.5s;
             }
           `}
         />
@@ -77,7 +77,7 @@ const Container = () => {
               font-size: 1.75em;
               color: ${theme};
               text-align: center;
-              transition: all 1.5s;
+              transition: color 1.5s;
             `}
           >
             <i className="fa fa-quote-left"></i>
@@ -90,7 +90,7 @@ const Container = () => {
               className="pull-right"
               css={css`
                 color: ${theme};
-                transition: all 1.5s;
+                transition: color 1.5s;
               `}
             >
               {author}
@@ -113,7 +113,7 @@ const Container = () => {
                 color: white;
                 width: 20%;
                 margin-right: 0.75em;
-                transition: all 1.5s;
+                transition: background-color 1.5s;
               `}
             >
               <i className="fa fa-twitter"></i>
@@ -127,7 +127,7 @@ const Container = () => {
                 background-color: ${theme};
                 color: white;
                 width: 20%;
-                transition: all 1.5s;
+                transition: background-color 1.5s;
               `}
             >
               <i className="fa fa-tumblr"></i>
@@ -140,7 +140,7 @@ const Container = () => {
               css={css`
                 background-color: ${theme};
                 color: white;
-                transition: all 1.5s;
+                transition: background-color 1.5s;
               `}
             >
               New Quote

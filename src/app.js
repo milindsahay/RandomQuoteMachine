@@ -3,7 +3,6 @@ import {render} from "react-dom";
 import Container from "./container";
 import {ReduxStore} from "./ReduxStore";
 import {Provider} from "react-redux";
-// Redux Integration
 const App = () => {
     return (
         <Provider store={ReduxStore}>
