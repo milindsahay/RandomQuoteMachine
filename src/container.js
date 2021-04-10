@@ -1,11 +1,12 @@
 /** @jsx jsx */
 import React, { useEffect, useState, useContext } from "react";
 import { jsx, css, Global } from "@emotion/core";
-import ThemeContext from "./ThemeContext";
+import {useDispatch, useSelector} from "react-redux";
 const Container = () => {
   const [quote, setQuote] = useState("Loading....");
   const [author, setAuthor] = useState("");
-  const [theme, setTheme] = useContext(ThemeContext);
+  const theme = useSelector(state => state.theme);
+  const dispatch = useDispatch();
   const setColor = () => {
     const colors = [
       "green",
@@ -20,7 +21,7 @@ const Container = () => {
       "aqua",
     ];
     let color = colors[Math.floor(Math.random() * colors.length)];
-    setTheme(color);
+    dispatch({type: 'set', payload: color})
   };
   const newQuote = () => {
     fetch("https://api.quotable.io/random")

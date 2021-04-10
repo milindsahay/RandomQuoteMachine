@@ -1,17 +1,17 @@
-import React, { useState } from "react";
-import { render } from "react-dom";
+import React from "react";
+import {render} from "react-dom";
 import Container from "./container";
-import ThemeContext from "./ThemeContext";
-
+import {ReduxStore} from "./ReduxStore";
+import {Provider} from "react-redux";
+// Redux Integration
 const App = () => {
-  const theme = useState("darkblue");
-  return (
-    <ThemeContext.Provider value={theme}>
-      <div>
-        <Container />
-      </div>
-    </ThemeContext.Provider>
-  );
+    return (
+        <Provider store={ReduxStore}>
+            <div>
+                <Container/>
+            </div>
+        </Provider>
+    );
 };
 
-render(<App />, document.getElementById("root"));
+render(<App/>, document.getElementById("root"));
